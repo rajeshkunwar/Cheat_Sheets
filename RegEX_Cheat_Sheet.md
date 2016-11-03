@@ -3,7 +3,7 @@ Special Characters in Regular Expressions & their meanings
 
 Character | Meaning | Example 
 --- | --- | ---
-**\*** | Match zero, one or more of the previous | Ah* matches "Ahhhhh" or "A"
+***** | Match zero, one or more of the previous | Ah* matches "Ahhhhh" or "A"
 **?**	| Match zero or one of the previous	| Ah? matches "Al" or "Ah"
 **+**| Match one or more of the previous	| Ah+ matches "Ah" or "Ahhh" but not "A"
 **\\**| Used to escape a special character	| Hungry\? matches "Hungry?"
