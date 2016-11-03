@@ -15,7 +15,6 @@ Connecting  to the vcenter: Connect-VIServer –Server vcenterserver_name –Use
  	  | PowerCLI	| vMA	| cli
 --- | --- | --- | --- |   
 Register a VM	| New-VM –vmfilepath “[datastore] path_to_vmx_on_datastore” –vmhost esxhost	| vmware-cmd --server esxhost –s register path_to_vmx_file <br \>vmware-cmd --server vcenter --vihost esxhost –s register path_to_vmx_file	| vim-cmd solo/registervm path_to_vmx_file
-
 Unregister a VM	| Remove-VM vm_name	| vmware-cmd --server esxhost –s unregister path_to_vmx_file <br \>vmware-cmd --server vcenter --vihost esxhost –s unregister path_to_vmx_file | vim-cmd vmsvc/unregister vmid
 
 Delete a VM	| Remove-VM vm_name -deletepermanently	| vmware-cmd --server esxhost –s unregister path_to_vmx_file <br \>vmware-cmd --server vcenter --vihost esxhost –s unregister path_to_vmx_file vifs --server esxhost --rm “[datastore] path_to_vmx_on_datastore”	| vim-cmd vmsvc/destroy vmid
