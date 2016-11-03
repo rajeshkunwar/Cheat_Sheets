@@ -1,14 +1,14 @@
 Performing common virtual machine-related tasks with command-line utilities (2012964)
 In these examples:
- •	vcenter is your vCenter Server hostname
- •	esxhost is your ESX/ESXi hostname
- •	datastore is the display name of your datastore
- •	path_to_vmx_on_datastore is the path to the virtual machine's vmx file relative to the datastore on which it resides
- •	vm_name is the display name of a virtual machine
- •	path_to_vmx_file is the full path to a virtual machine's vmx file
- •	snapshot_name is the name given to a virtual machine snapshot
- •	guest_admin_user is a user account with administrative access within a virtual machine's guest OS
- •	guest_admin_password is the password for the account noted by guest_admin_user
+ - vcenter is your vCenter Server hostname
+ - 	esxhost is your ESX/ESXi hostname
+ - datastore is the display name of your datastore
+ - path_to_vmx_on_datastore is the path to the virtual machine's vmx file relative to the datastore on which it resides
+ - vm_name is the display name of a virtual machine
+ - path_to_vmx_file is the full path to a virtual machine's vmx file
+ - snapshot_name is the name given to a virtual machine snapshot
+ - guest_admin_user is a user account with administrative access within a virtual machine's guest OS
+ - guest_admin_password is the password for the account noted by guest_admin_user
 
 Connecting  to the vcenter: Connect-VIServer –Server vcenterserver_name –User username –Password password
 
