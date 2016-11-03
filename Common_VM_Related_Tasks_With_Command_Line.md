@@ -15,16 +15,11 @@ Connecting  to the vcenter: Connect-VIServer –Server vcenterserver_name –Use
  	  | PowerCLI	| vMA	| cli
 --- | --- | --- | --- |   
 Register a VM	| New-VM –vmfilepath “[datastore] path_to_vmx_on_datastore” –vmhost esxhost	| vmware-cmd --server esxhost –s register path_to_vmx_file <br \>
-vmware-cmd --server vcenter --vihost esxhost –s register path_to_vmx_file	<br \> vim-cmd solo/registervm path_to_vmx_file
-Unregister a VM	| Remove-VM vm_name	| vmware-cmd --server esxhost –s unregister path_to_vmx_file <br \>vmware-cmd --server vcenter --vihost esxhost –s unregister path_to_vmx_file <br \>vim-cmd
-vmsvc/unregister vmid
-Delete a VM	Remove-VM vm_name -deletepermanently	vmware-cmd --server esxhost –s unregister path_to_vmx_file
-vmware-cmd --server vcenter --vihost esxhost –s unregister path_to_vmx_file vifs --server esxhost --rm “[datastore] path_to_vmx_on_datastore”	vim-cmd vmsvc/destroy vmid
-Get a listing of VMs on a host	Get-VM –location esxhost	vmware-cmd –-server esxhost –-username root –l
-vmware-cmd --server vcenter –-vihost esxhost -l	esxcli vm process list
-vim-cmd vmsvc/getallvms
-Determine if a VM has a snapshot	Get-VM –name vm_name | Get-Snapshot	vmware-cmd --server esxhost path_to_vmx_file hassnapshot
-vmware-cmd --server vcenter --vihost esxhost path_to_vmx_file hassnapshot	vim-cmd vmsvc/get.snapshot vmid
+vmware-cmd --server vcenter --vihost esxhost –s register path_to_vmx_file	| vim-cmd solo/registervm path_to_vmx_file
+Unregister a VM	| Remove-VM vm_name	| vmware-cmd --server esxhost –s unregister path_to_vmx_file <br \>vmware-cmd --server vcenter --vihost esxhost –s unregister path_to_vmx_file | vim-cmd vmsvc/unregister vmid
+Delete a VM	| Remove-VM vm_name -deletepermanently	| vmware-cmd --server esxhost –s unregister path_to_vmx_file <br \>vmware-cmd --server vcenter --vihost esxhost –s unregister path_to_vmx_file vifs --server esxhost --rm “[datastore] path_to_vmx_on_datastore”	| vim-cmd vmsvc/destroy vmid
+Get a listing of VMs on a host	| Get-VM –location esxhost	| vmware-cmd –-server esxhost –-username root –l <br \>vmware-cmd --server vcenter –-vihost esxhost -l	| esxcli vm process list <br \>vim-cmd vmsvc/getallvms
+Determine if a VM has a snapshot	| Get-VM –name vm_name \| Get-Snapshot	| vmware-cmd --server esxhost path_to_vmx_file hassnapshot <br \>vmware-cmd --server vcenter --vihost esxhost path_to_vmx_file hassnapshot	| vim-cmd vmsvc/get.snapshot vmid
 Take a snapshot of a VM	Get-VM –name vm_name | New-Snapshot –name snapshot_name	vmware-cmd --server esxhost path_to_vmx_file createsnapshot snapshot_name
 vmware-cmd --server vcenter --vihost esxhost path_to_vmx_file createsnapshot snapshot_name	vim-cmd vmsvc/snapshot.create vmidsnapshot_name
 Remove a snapshot of a VM	Get-VM –name vm_name | Get-Snapshot –name snapshot_name | Remove-Snapshot	vmware-cmd --server esxhost path_to_vmx_file removesnapshots
