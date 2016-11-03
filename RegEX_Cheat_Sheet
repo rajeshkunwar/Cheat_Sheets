@@ -1,0 +1,6 @@
+Regular Expressions (Regex) Cheat Sheet
+Special Characters in Regular Expressions & their meanings
+
+|Character|Meaning|Example|
+|---------|-------|-------|
+|*|Match zero, one or more of the previous|Ah* matches "Ahhhhh" or "A"|
