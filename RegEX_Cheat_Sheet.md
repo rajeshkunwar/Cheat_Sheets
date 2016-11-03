@@ -10,7 +10,7 @@ Character | Meaning | Example
 .	| Wildcard character, matches any character	| do.* matches "dog", "door", "dot", etc.
 ( )	| Group characters	| See example for |
 [ ]	| Matches a range of characters	| [cbf]ar matches "car", "bar", or "far"  [0-9]+ matches any positive integer,  [a-zA-Z] matches ascii letters a-z (uppercase and lower case),  [^0-9] matches any character not 0-9.,  
-\|	| Matche previous OR next character/group	| (Mon)|(Tues)day matches "Monday" or "Tuesday"
+\|	| Matche previous OR next character/group	| (Mon)\|(Tues)day matches "Monday" or "Tuesday"
 { }	| Matches a specified number of occurrences of the previous	| [0-9]{3} matches "315" but not "31"
 [0-9]{2,4} matches "12", "123", and "1234"
 [0-9]{2,} matches "1234567..."
