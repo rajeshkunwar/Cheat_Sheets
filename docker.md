@@ -3,9 +3,9 @@
 ## Docker Engine
 
   ### Container Related Commands
-    $ docker [CMD][OPTS] CONTAINER
+   $ docker [CMD][OPTS] CONTAINER
     
-    **Examples:**
+   **Examples:**
       All examples provided here work in RHEL
     
     **1. Run a container in interactive mode:**
