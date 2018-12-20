@@ -60,9 +60,9 @@
 | commit | Create a new image from a container’s changes |
 | cp | Copy files/folders between a container and the local filesystem |
 
-create        | Create a new container
+| create        | Create a new container |
 
-diff          | Inspect changes on a container’s filesystem
+| diff          | Inspect changes on a container’s filesystem |
 
 exec          | Run a command in a running container
 
