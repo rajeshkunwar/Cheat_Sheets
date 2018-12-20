@@ -5,44 +5,53 @@
 ### Container Related Commands
     $ docker [CMD][OPTS] CONTAINER
     
- **Examples:**
-      All examples provided here work in RHEL
+**Examples:**
+    All examples provided here work in RHEL
     
-   **1. Run a container in interactive mode:**
-        $ docker run -it rhel7/rhel bash                  # Run a bash shell inside an image
-        [root@...../]# cat /etc/redhat-release            # Check the release inside container
+**1. Run a container in interactive mode:**
+     
+    $ docker run -it rhel7/rhel bash                  # Run a bash shell inside an image
+    [root@...../]# cat /etc/redhat-release            # Check the release inside container
     
  **2. Run a container in detached mode:
-      $ docker run --name mywildfly -d -p 8080:8080 jboss/wildfly
       
-    3. Run a detached container in a previously created docker network:
-      $ docker network create mynetwork
-      $ docker run --name mywildfly-net -d --net mynetwork -p 8080:8080 jboss/wildfly
+    $ docker run --name mywildfly -d -p 8080:8080 jboss/wildfly
       
-    4. Run a detached container mounting a local folder inside the container:
-      $ docker run --name mywildfly-volume -d -v myfolder/:/opt/jboss/wildfly/standalone/deployments/ -p 8080:8080 jboss/windfly
+**3. Run a detached container in a previously created docker network:
       
-    5. Follow the logs of a specific container
-      $ docker logs -f mywildfly
-      $ docker logs -f <container-name>
+    $ docker network create mynetwork
+    $ docker run --name mywildfly-net -d --net mynetwork -p 8080:8080 jboss/wildfly
       
-    6. List containers
-      $ docker ps                                     # List only active containers
-      $ docker ps -a                                  # List all containers
+**4. Run a detached container mounting a local folder inside the container:
+  
+    $ docker run --name mywildfly-volume -d -v myfolder/:/opt/jboss/wildfly/standalone/deployments/ -p 8080:8080 jboss/windfly
       
-    7. Stop a container
-      $ docker stop <container-name>                  # Stop a container
-      $ docker stop -t 1 <container-name>             # Stop a container (timeout = 1 second)
+**5. Follow the logs of a specific container
       
-    8. Remove a container
-      $ docker rm <container-name>                    # Remove a stopped container
-      $ docker rm -f <container-name>                 # Remove a stopped container. Force stop if it is active
-      $ docker rm -f $(docker ps -aq)                 # Remove all containers
-      $ docker rm $(docker ps -q -f "status=exited")  # Remove all stopeed containers
+    $ docker logs -f mywildfly
+    $ docker logs -f <container-name>
+      
+**6. List containers
+      
+    $ docker ps                                     # List only active containers
+    $ docker ps -a                                  # List all containers
+      
+**7. Stop a container
+     
+    $ docker stop <container-name>                  # Stop a container
+    $ docker stop -t 1 <container-name>             # Stop a container (timeout = 1 second)
+      
+**8. Remove a container
+  
+    $ docker rm <container-name>                    # Remove a stopped container
+    $ docker rm -f <container-name>                 # Remove a stopped container. Force stop if it is active
+    $ docker rm -f $(docker ps -aq)                 # Remove all containers
+    $ docker rm $(docker ps -q -f "status=exited")  # Remove all stopeed containers
     
-    9. Execute a new process in an existing container
-       $ docker exec -it mywildfly bash               # Executes and access bash inside a WildFly container
-       $ docker exec -it <container-name> <process>
+**9. Execute a new process in an existing container 
+    
+    $ docker exec -it mywildfly bash               # Executes and access bash inside a WildFly container
+    $ docker exec -it <container-name> <process>
        
 --------------------------------------------------------------------------------------------------------------------------------|      
 daemon        | Run the persistent process that manages containers                                                              
