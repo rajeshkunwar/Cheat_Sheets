@@ -1,16 +1,14 @@
-Docker Architecture
+##Docker Architecture
 
-Docker Engine
---------------
+##Docker Engine
 
-  Container Related Commands
+  ###Container Related Commands
     $ docker [CMD][OPTS] CONTAINER
     
-    Examples:
+    **Examples:**
+      All examples provided here work in RHEL
     
-    All examples provided here work in RHEL
-    
-    1. Run a container in interactive mode:
+    **1. Run a container in interactive mode:**
       $ docker run -it rhel7/rhel bash                  # Run a bash shell inside an image
        [root@...../]# cat /etc/redhat-release           # Check the release inside container
     
