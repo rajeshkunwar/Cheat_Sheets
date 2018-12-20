@@ -53,15 +53,12 @@
     $ docker exec -it mywildfly bash               # Executes and access bash inside a WildFly container
     $ docker exec -it <container-name> <process>
        
-Commands      | Function
---------------------------
-daemon        | Run the persistent process that manages containers                                                              
-
-attach        | Attach a running container to view its ongoing output or to control it interactively
-
-commit        | Create a new image from a container’s changes
-
-cp            | Copy files/folders between a container and the local filesystem
+| Commands | Description |
+| --- | --- |
+| daemon | Run the persistent process that manages containers |                                                              
+| attach | Attach a running container to view its ongoing output or to control it interactively |
+| commit | Create a new image from a container’s changes |
+| cp | Copy files/folders between a container and the local filesystem |
 
 create        | Create a new container
 
