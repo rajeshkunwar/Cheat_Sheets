@@ -2,17 +2,17 @@
 
 ## Docker Engine
 
-  ### Container Related Commands
-   $ docker [CMD][OPTS] CONTAINER
+### Container Related Commands
+    $ docker [CMD][OPTS] CONTAINER
     
-   **Examples:**
+ **Examples:**
       All examples provided here work in RHEL
     
-    **1. Run a container in interactive mode:**
-      $ docker run -it rhel7/rhel bash                  # Run a bash shell inside an image
-       [root@...../]# cat /etc/redhat-release           # Check the release inside container
+   **1. Run a container in interactive mode:**
+        $ docker run -it rhel7/rhel bash                  # Run a bash shell inside an image
+        [root@...../]# cat /etc/redhat-release            # Check the release inside container
     
-    2. Run a container in detached mode:
+ **2. Run a container in detached mode:
       $ docker run --name mywildfly -d -p 8080:8080 jboss/wildfly
       
     3. Run a detached container in a previously created docker network:
