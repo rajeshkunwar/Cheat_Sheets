@@ -59,43 +59,32 @@
 | attach | Attach a running container to view its ongoing output or to control it interactively |
 | commit | Create a new image from a container’s changes |
 | cp | Copy files/folders between a container and the local filesystem |
+| create | Create a new container |
+| diff | Inspect changes on a container’s filesystem |
+|exec          | Run a command in a running container |
+| export        | Export the contents of a container’s filesystem as a ‘.tar’|  archive |
+| kill          | Kill a running container using SIGKILL or a specified signal |
+| logs          | Fetch the logs of a container |
+| pause         | Pause all processes within a container |
+| port          | List portmappings, or lookup the publicfacing port that is NATed to the PRIVATE_PORT |
+| ps            | List all containers |
 
-| create        | Create a new container |
+| rename        | Rename a container |
 
-| diff          | Inspect changes on a container’s filesystem |
+| restart       | Restart a container |
+| rm            | Remove/delete one or more containers |
 
-exec          | Run a command in a running container
+| run           | Run a command in a new container |
+| start         | Start one or more containers |
 
-export        | Export the contents of a container’s filesystem as a ‘.tar’ archive
+| stop          | Stop a container by sending SIGTERM then SIGKILL after a grace period |
 
-kill          | Kill a running container using SIGKILL or a specified signal
+| top           | Display the running processes of a container |
 
-logs          | Fetch the logs of a container
+| unpause       | Unpause all processes within a container |
 
-pause         | Pause all processes within a container
+| update        | Update configuration of one or more containers |
 
-port          | List portmappings, or lookup the publicfacing port that is NATed to the PRIVATE_PORT
+| wait          | Block until a container stops, then print its exit code |
 
-ps            | List all containers
-
-rename        | Rename a container
-
-restart       | Restart a container
-
-rm            | Remove/delete one or more containers
-
-run           | Run a command in a new container
---------------------------------------------------------------------------------------------------------------------------------|
-start         | Start one or more containers
---------------------------------------------------------------------------------------------------------------------------------|
-stop          | Stop a container by sending SIGTERM then SIGKILL after a grace period
---------------------------------------------------------------------------------------------------------------------------------|
-top           | Display the running processes of a container
---------------------------------------------------------------------------------------------------------------------------------|
-unpause       | Unpause all processes within a container
---------------------------------------------------------------------------------------------------------------------------------|
-update        | Update configuration of one or more containers
---------------------------------------------------------------------------------------------------------------------------------|
-wait          | Block until a container stops, then print its exit code
---------------------------------------------------------------------------------------------------------------------------------|
 
