@@ -174,43 +174,43 @@
 
 ## Dockerfile
 
-    The Dockerfile provides the instructions to build a container image through the **`docker build -t [username/]<imagename>[:tag <dockerfilepath>`** command. It starts from a previous existing Base image (through the FROM clause) followed by any other needed Dockerfile instructions.
+    The Dockerfile provides the instructions to build a container image through the `docker build -t [username/]<imagename>[:tag <dockerfilepath>` command. It starts from a previous existing Base image (through the FROM clause) followed by any other needed Dockerfile instructions.
     This process is very similar to a compilation of a source code into a binary output, but in this case the output of the Dockerfile will be a container image.
 
-**Example Dockerfile**
-    # Use the existing WildFly image
-    FROM jboss/wildfly
-    # Add an administrative user
-    RUN /opt/jboss/wildfly/bin/adduser.
-    sh admin Admin#70365 silent
-    #Expose the Administrative port
-    EXPOSE 8080 9990
-    # Bind the WildFly management to all IP addresses
-    CMD ["/opt/jboss/wildfly/bin/standalone.sh", "b",
-    "0.0.0.0", "bmanagement",
-    "0.0.0.0"]
+    Example Dockerfile
+    -------------------
+        # Use the existing WildFly image
+        FROM jboss/wildfly
+            
+        # Add an administrative user
+        RUN /opt/jboss/wildfly/bin/adduser.sh admin Admin#70365 --silent
+        
+        #Expose the Administrative port
+        EXPOSE 8080 9990
+        
+        # Bind the WildFly management to all IP addresses
+        CMD ["/opt/jboss/wildfly/bin/standalone.sh", "-b", "0.0.0.0", "-bmanagement", "0.0.0.0"]
+
+    Using the example Dockerfile
+    ----------------------------
+        # Build the WildFly image
+        $ docker build -t mywildfly .
+        
+        # Run a WidFly server
+        $ docker run -it -p 8080:8080 -p 9990:9990 mywildfly
+        
+        # Access the WildFly administrative console and log in with the credentials admin/Admin#70365
+        open http://<docker-daemon-ip>:9990 in a browser
+        
+
+    Dockerfile INSTRUCTION arguments
+    --------------------------------
     
-**Using the example Dockerfile**
-    # Build the WildFly image
-    $ docker build t
-    mywildfly .
-    # Run a WidFly server
-    $ docker run it
-    p
-    8080:8080 p
-    9990:9990 mywildfly
-    # Access the WildFly administrative console and log in with the
-    credentials admin/Admin#70365
-    open http://<dockerdaemonip>:
-    9990 in a browser
- 
-Dockerfile INSTRUCTION arguments
-FROM Sets the Base image for subsequent instructions
-MAINTAINER Sets the author field of the the generated images
-RUN Executes commands in a new layer on top of the current image and
-commits the results
-CMD Allowed only once (if many, then only the last one takes effect)
-LABEL Adds metadata to an image
+    | FROM          | Sets the Base image for subsequent instructions |
+    | MAINTAINER    | Sets the author field of the the generated images |
+    | RUN           | Executes commands in a new layer on top of the current image and commits the results |
+    | CMD           | Allowed only once (if many, then only the last one takes effect) |
+    | LABEL         | Adds metadata to an image |
 EXPOSE Informs Docker that the container listens on the specified network ports
 at runtime.
 ENV Sets an environment variable
