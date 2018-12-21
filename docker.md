@@ -131,3 +131,141 @@
 | save      | Save one or more images to a ‘.tar’ archive (streamed to STDOUT by default) |
 | search    | Search the Docker registry for images |
 | tag       | Tag an image into a repository |
+
+
+### Network related commands
+    $ docker network [CMD] [OPTS]
+    
+| Commands | Description |
+| ------------- | -------------- |
+| connect       | Connects a container to a network |
+| create        | Creates a new network with the specified name |
+| disconnect    | Disconnects a container from a network |
+| inspect       | Displays detailed information about on a network |
+| ls            | Lists all the networks created by the user |
+| rm            | Deletes one or more networks |
+
+### Registry related commands
+    Default is https://index.docker.io/v1/
+
+| Commands | Description |
+| --------- | ----------- |
+| login     | Log in to a Docker registry server. If no server is specified, then the default is used |
+| logout    | Log out from a Docker registry server. If no server is specified then the default is used. |
+
+### Volume related commands
+    $ docker volume [CMD] [OPTS]
+
+| Commands | Description |
+| --------- | ----------- |
+| create    | Create a volume |
+| inspect   | Return lowlevel information on a volume |
+| ls        | List volumes |
+| rm        | Remove a volume |
+
+### Related commands
+
+| Commands | Description |
+| --------- | ----------- | 
+| docker events | Get realtime information from the server |
+| docker info   | Display systemwide information |
+| docker version    | Show the docker version information |
+| systemctl status docker | Check if the docker service is running |
+
+## Dockerfile
+
+    The Dockerfile provides the instructions to build a container image through the `docker build -t [username/]<imagename>[:tag <dockerfilepath>` command. It starts from a previous existing Base image (through the FROM clause) followed by any other needed Dockerfile instructions.
+    This process is very similar to a compilation of a source code into a binary output, but in this case the output of the Dockerfile will be a container image.
+
+**Example Dockerfile**
+    # Use the existing WildFly image
+    FROM jboss/wildfly
+    # Add an administrative user
+    RUN /opt/jboss/wildfly/bin/adduser.
+    sh admin Admin#70365 silent
+    #Expose the Administrative port
+    EXPOSE 8080 9990
+    # Bind the WildFly management to all IP addresses
+    CMD ["/opt/jboss/wildfly/bin/standalone.sh", "b",
+    "0.0.0.0", "bmanagement",
+    "0.0.0.0"]
+    
+**Using the example Dockerfile**
+    # Build the WildFly image
+    $ docker build t
+    mywildfly .
+    # Run a WidFly server
+    $ docker run it
+    p
+    8080:8080 p
+    9990:9990 mywildfly
+    # Access the WildFly administrative console and log in with the
+    credentials admin/Admin#70365
+    open http://<dockerdaemonip>:
+    9990 in a browser
+ 
+Dockerfile INSTRUCTION arguments
+FROM Sets the Base image for subsequent instructions
+MAINTAINER Sets the author field of the the generated images
+RUN Executes commands in a new layer on top of the current image and
+commits the results
+CMD Allowed only once (if many, then only the last one takes effect)
+LABEL Adds metadata to an image
+EXPOSE Informs Docker that the container listens on the specified network ports
+at runtime.
+ENV Sets an environment variable
+ADD Copies new files, directories or remote file URLs into the filesystem of
+the container
+COPY Copies new files or directories into the filesystem of the container
+ENTRYPOINT Allows you to configure a container that will run as an executable
+VOLUME Creates a mount point and marks it as holding externally mounted
+volumes from native host or other containers
+USER Sets the user name or UID to use when running an image
+WORKDIR Sets the working directory for any RUN, CMD, ENTRYPOINT, COPY,
+and ADD commands
+ARG Defines a variable that users can pass at buildtime
+to the builder using
+buildarg
+ONBUILD Adds an instruction to be executed later, when the image is used as the
+base for another build
+STOPSIGNAL Sets the system call signal that will be sent to the container to initiate
+exit.
+Example: Running a Web Server Container
+$ mkdir p
+www/
+$ echo “Server is up” > www/index.html
+$ docker run d
+\
+p
+8000:8000 \
+Create directory (if it doesn’t exist)
+Make a text file to serve later
+Run process in a container as a daemon
+Map port 8000 in container to 8000 on host
+name=
+pythonweb \
+v
+`pwd`/www:/var/www/html \
+w
+/var/www/html \
+rhel7/rhel \
+/bin/python \
+m
+SimpleHTTPServer 8000
+$ curl <dockerdaemonip>:
+8000
+$ docker ps
+$ docker inspect python_web | less
+$ docker exec it
+python_web bash
+Name the container “pythonweb”
+Map container html to host www directory
+Set working directory to /var/www/html
+Choose the rhel7/rhel directory
+Run the python command for
+A simple Web server listening to port 8000
+Check that server is working
+See that container is running
+Inspect the container
+Open the running container and look in
+
