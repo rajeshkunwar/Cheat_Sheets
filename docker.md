@@ -88,24 +88,46 @@
 
 **1. Build an image using a Dockerfile**
 
-        $ docker build -t [username/]<image-name>[:tag] <dockerfile-path>       # Build an image
-        $ docker build -t myimage:latest                                        # Build an image called myimage using the Dockerfile in                                                                                 # the same folder where the command was executed
+    $ docker build -t [username/]<image-name>[:tag] <dockerfile-path>       # Build an image
+    $ docker build -t myimage:latest                                        # Build an image called myimage using the Dockerfile in                                                                                 # the same folder where the command was executed
 **2. Check ht history of an image**
  
-        $ docker history jboss/wildfly                                          #Check the history of the jboss/wildfly image
-        $ docker history [username/]<imagename>[:tag]                           # Check the history of an image
+    $ docker history jboss/wildfly                            #Check the history of the jboss/wildfly image
+    $ docker history [username/]<imagename>[:tag]             # Check the history of an image
         
 **3. List the images**
     
-        $ docker images
+    $ docker images
         
 **4. Remove an image from the local registry**
 
-        $ docker rmi [username/]<image-name>[:tag]
+    $ docker rmi [username/]<image-name>[:tag]
         
 **5. Tag an image
     
-        $ docker tag jboss/wildfly myimage:v1                                    # Creates an image called"myimage" with the tag "v1"                                                                                    # for the image jboss/wildfly:latest
-        
+    $ docker tag jboss/wildfly myimage:v1                               # Creates an image called"myimage" with the tag "v1" for the                                                                             # image jboss/wildfly:latest
+    $ docker tag <imagename> <newimagename>                             # Creates a new image with the latest tag
+    $ docker tag <imagename>[:tag] [username/]<newimagename>[:newtag]   # Creates a new image specifying the "new tag" from an                                                                                   # existing image and tag
+**6. Exporting and Importing and image to an external file**
 
+    $ docker save o <filename>.tar [username/]<imagename>[:tag]         # Export the image to an external file
+    $ docker load i <filename>.tar                                      # Import an image from an external file
 
+**7. Push an image to a registry.**
+    
+    $ docker push [registry/][username/]<imagename>[:tag]
+
+| Commands  | Description |
+| --------- | ----------- |
+| build     | Build Docker images from a Dockerfile |
+| history   | Show the history of an image |
+| images    | List images |
+| import    | Create an empty filesystem image and import the contents of the tarball into it |
+| inspect   | Return lowlevel information on a container or image |
+| load      | Load an image from a ‘.tar’ archive or STDIN |
+| pull      | Pull an image or a repository from the registry |
+| push      | Push an image or a repository to the registry |
+| rmi       | Remove one or more images |
+| save      | Save one or more images to a ‘.tar’ archive (streamed to STDOUT by default) |
+| search    | Search the Docker registry for images |
+| tag       | Tag an image into a repository |
