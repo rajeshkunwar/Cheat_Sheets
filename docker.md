@@ -80,3 +80,10 @@
 | wait          | Block until a container stops, then print its exit code |
 
 
+### Image Related Commands
+
+    $ docker [CMD][OPTS] IMAGE
+  
+**Examples **
+
+
