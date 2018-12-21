@@ -54,14 +54,14 @@
     $ docker exec -it <container-name> <process>
        
 | Commands | Description |
-| --- | --- |
-| daemon | Run the persistent process that manages containers |                                                              
-| attach | Attach a running container to view its ongoing output or to control it interactively |
-| commit | Create a new image from a container’s changes |
-| cp | Copy files/folders between a container and the local filesystem |
-| create | Create a new container |
-| diff | Inspect changes on a container’s filesystem |
-|exec          | Run a command in a running container |
+| --------- | ---------- |
+| daemon        | Run the persistent process that manages containers |                                                              
+| attach        | Attach a running container to view its ongoing output or to control it interactively |
+| commit        | Create a new image from a container’s changes |
+| cp            | Copy files/folders between a container and the local filesystem |
+| create        | Create a new container |
+| diff          | Inspect changes on a container’s filesystem |
+|exec           | Run a command in a running container |
 | export        | Export the contents of a container’s filesystem as a ‘.tar’|  archive |
 | kill          | Kill a running container using SIGKILL or a specified signal |
 | logs          | Fetch the logs of a container |
