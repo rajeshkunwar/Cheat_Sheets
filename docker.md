@@ -206,17 +206,24 @@
     Dockerfile INSTRUCTION arguments
     --------------------------------
     
-    | FROM          | Sets the Base image for subsequent instructions |
-    | MAINTAINER    | Sets the author field of the the generated images |
-    | RUN           | Executes commands in a new layer on top of the current image and commits the results |
-    | CMD           | Allowed only once (if many, then only the last one takes effect) |
-    | LABEL         | Adds metadata to an image |
-EXPOSE Informs Docker that the container listens on the specified network ports
-at runtime.
-ENV Sets an environment variable
-ADD Copies new files, directories or remote file URLs into the filesystem of
-the container
-COPY Copies new files or directories into the filesystem of the container
+    | FROM          | Sets the Base image for subsequent instructions                                           |
+    |-----------------------------------------------------------------------------------------------------------|
+    | MAINTAINER    | Sets the author field of the the generated images                                         |
+    |-----------------------------------------------------------------------------------------------------------|
+    | RUN           | Executes commands in a new layer on top of the current image and commits the results      |
+    |-----------------------------------------------------------------------------------------------------------|
+    | CMD           | Allowed only once (if many, then only the last one takes effect)                          |
+    |-----------------------------------------------------------------------------------------------------------|
+    | LABEL         | Adds metadata to an image                                                                 |
+    |-----------------------------------------------------------------------------------------------------------|
+    | EXPOSE        | Informs Docker that the container listens on the specified network ports at runtime       |
+    |-----------------------------------------------------------------------------------------------------------|
+    | ENV           | Sets an environment variable                                                              |
+    |-----------------------------------------------------------------------------------------------------------|
+    | ADD           | Copies new files, directories or remote file URLs into the filesystem of the container    |
+    |-----------------------------------------------------------------------------------------------------------|
+    | COPY          | Copies new files or directories into the filesystem of the container                      |
+    
 ENTRYPOINT Allows you to configure a container that will run as an executable
 VOLUME Creates a mount point and marks it as holding externally mounted
 volumes from native host or other containers
