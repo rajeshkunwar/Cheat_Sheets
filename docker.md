@@ -174,7 +174,7 @@
 
 ## Dockerfile
 
-    The Dockerfile provides the instructions to build a container image through the `docker build -t [username/]<imagename>[:tag <dockerfilepath>` command. It starts from a previous existing Base image (through the FROM clause) followed by any other needed Dockerfile instructions.
+    The Dockerfile provides the instructions to build a container image through the **`docker build -t [username/]<imagename>[:tag <dockerfilepath>`** command. It starts from a previous existing Base image (through the FROM clause) followed by any other needed Dockerfile instructions.
     This process is very similar to a compilation of a source code into a binary output, but in this case the output of the Dockerfile will be a container image.
 
 **Example Dockerfile**
