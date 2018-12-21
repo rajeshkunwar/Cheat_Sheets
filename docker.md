@@ -68,23 +68,15 @@
 | pause         | Pause all processes within a container |
 | port          | List portmappings, or lookup the publicfacing port that is NATed to the PRIVATE_PORT |
 | ps            | List all containers |
-
 | rename        | Rename a container |
-
 | restart       | Restart a container |
 | rm            | Remove/delete one or more containers |
-
 | run           | Run a command in a new container |
 | start         | Start one or more containers |
-
 | stop          | Stop a container by sending SIGTERM then SIGKILL after a grace period |
-
 | top           | Display the running processes of a container |
-
 | unpause       | Unpause all processes within a container |
-
 | update        | Update configuration of one or more containers |
-
 | wait          | Block until a container stops, then print its exit code |
 
 
