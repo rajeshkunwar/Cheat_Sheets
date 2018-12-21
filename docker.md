@@ -84,6 +84,28 @@
 
     $ docker [CMD][OPTS] IMAGE
   
-**Examples **
+**Examples:**
+
+**1. Build an image using a Dockerfile**
+
+        $ docker build -t [username/]<image-name>[:tag] <dockerfile-path>       # Build an image
+        $ docker build -t myimage:latest                                        # Build an image called myimage using the Dockerfile in                                                                                 # the same folder where the command was executed
+**2. Check ht history of an image**
+ 
+        $ docker history jboss/wildfly                                          #Check the history of the jboss/wildfly image
+        $ docker history [username/]<imagename>[:tag]                           # Check the history of an image
+        
+**3. List the images**
+    
+        $ docker images
+        
+**4. Remove an image from the local registry**
+
+        $ docker rmi [username/]<image-name>[:tag]
+        
+**5. Tag an image
+    
+        $ docker tag jboss/wildfly myimage:v1                                    # Creates an image called"myimage" with the tag "v1"                                                                                    # for the image jboss/wildfly:latest
+        
 
 
