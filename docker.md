@@ -241,42 +241,21 @@
     | STOPSIGNAL    | Sets the system call signal that will be sent to the container to initiate exit.          |
     |-----------------------------------------------------------------------------------------------------------|
     
-Example: Running a Web Server Container
-$ mkdir p
-www/
-$ echo “Server is up” > www/index.html
-$ docker run d
-\
-p
-8000:8000 \
-Create directory (if it doesn’t exist)
-Make a text file to serve later
-Run process in a container as a daemon
-Map port 8000 in container to 8000 on host
-name=
-pythonweb \
-v
-`pwd`/www:/var/www/html \
-w
-/var/www/html \
-rhel7/rhel \
-/bin/python \
-m
-SimpleHTTPServer 8000
-$ curl <dockerdaemonip>:
-8000
-$ docker ps
-$ docker inspect python_web | less
-$ docker exec it
-python_web bash
-Name the container “pythonweb”
-Map container html to host www directory
-Set working directory to /var/www/html
-Choose the rhel7/rhel directory
-Run the python command for
-A simple Web server listening to port 8000
-Check that server is working
-See that container is running
-Inspect the container
-Open the running container and look in
-
+    Example: Running a Web Server Container
+    ---------------------------------------
+        $ mkdir -p www/                                     Create directory (if it doesn;t exist)
+        $ echo "Server is up" > /www/index.html             Make a text file to serve later
+        $ docker run -d \                                   Run process in a container as a daemon.
+            -p 8000:8000 \                                  Map port 8000 in container to 8000 on host
+            --name=pythonweb \                              Name the container "pythonweb"
+            -v `pwd` /www:/var/www/html \                   Map container html to host www directory
+            -w /var/www/html \                              Set working directory to /var/www/html
+            rhel7/rhel \                                    Choose the rhel7/rhel directory
+            /bin/python \                                   Run the python command for
+            -m SimpleHTTPServer 80000                       A simple Web Server listening to port 8000    
+        $ cur <docker-daemon-ip>:8000                       Check that server is working
+        $ docker ps                                         See that container is running
+        $ docker inspect python_web | less                  Inspect the container
+        $ docker exec - it python_web bash                  Open the running container and look in
+        
+            
