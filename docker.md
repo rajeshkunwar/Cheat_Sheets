@@ -223,20 +223,24 @@
     | ADD           | Copies new files, directories or remote file URLs into the filesystem of the container    |
     |-----------------------------------------------------------------------------------------------------------|
     | COPY          | Copies new files or directories into the filesystem of the container                      |
+    |-----------------------------------------------------------------------------------------------------------|
+    | ENTRYPOINT    | Allows you to configure a container that will run as an executable                        |
+    |-----------------------------------------------------------------------------------------------------------|
+    | VOLUME        | Creates a mount point and marks it as holding externally mounted volumes from native host 
+                        or other containers                                                                     |
+    |-----------------------------------------------------------------------------------------------------------|
+    | USER          | Sets the user name or UID to use when running an image                                    |
+    |-----------------------------------------------------------------------------------------------------------|
+    | WORKDIR       | Sets the working directory for any RUN, CMD, ENTRYPOINT, COPY, and ADD commands           |
+    |-----------------------------------------------------------------------------------------------------------|
+    | ARG           | Defines a variable that users can pass at buildtime to the builder using buildarg         |
+    |-----------------------------------------------------------------------------------------------------------|
+    | ONBUILD       | Adds an instruction to be executed later, when the image is used as the base for another 
+                        build                                                                                   |
+    |-----------------------------------------------------------------------------------------------------------|
+    | STOPSIGNAL    | Sets the system call signal that will be sent to the container to initiate exit.          |
+    |-----------------------------------------------------------------------------------------------------------|
     
-ENTRYPOINT Allows you to configure a container that will run as an executable
-VOLUME Creates a mount point and marks it as holding externally mounted
-volumes from native host or other containers
-USER Sets the user name or UID to use when running an image
-WORKDIR Sets the working directory for any RUN, CMD, ENTRYPOINT, COPY,
-and ADD commands
-ARG Defines a variable that users can pass at buildtime
-to the builder using
-buildarg
-ONBUILD Adds an instruction to be executed later, when the image is used as the
-base for another build
-STOPSIGNAL Sets the system call signal that will be sent to the container to initiate
-exit.
 Example: Running a Web Server Container
 $ mkdir p
 www/
